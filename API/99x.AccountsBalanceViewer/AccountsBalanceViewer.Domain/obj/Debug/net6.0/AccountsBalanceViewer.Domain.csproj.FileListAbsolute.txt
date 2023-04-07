@@ -1,0 +1,12 @@
+D:\Repos\AccountsBalanceViewer\API\99x.AccountsBalanceViewer\AccountsBalanceViewer.Domain\bin\Debug\net6.0\AccountsBalanceViewer.Domain.deps.json
+D:\Repos\AccountsBalanceViewer\API\99x.AccountsBalanceViewer\AccountsBalanceViewer.Domain\bin\Debug\net6.0\AccountsBalanceViewer.Domain.dll
+D:\Repos\AccountsBalanceViewer\API\99x.AccountsBalanceViewer\AccountsBalanceViewer.Domain\bin\Debug\net6.0\AccountsBalanceViewer.Domain.pdb
+D:\Repos\AccountsBalanceViewer\API\99x.AccountsBalanceViewer\AccountsBalanceViewer.Domain\obj\Debug\net6.0\AccountsBalanceViewer.Domain.csproj.AssemblyReference.cache
+D:\Repos\AccountsBalanceViewer\API\99x.AccountsBalanceViewer\AccountsBalanceViewer.Domain\obj\Debug\net6.0\AccountsBalanceViewer.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Repos\AccountsBalanceViewer\API\99x.AccountsBalanceViewer\AccountsBalanceViewer.Domain\obj\Debug\net6.0\AccountsBalanceViewer.Domain.AssemblyInfoInputs.cache
+D:\Repos\AccountsBalanceViewer\API\99x.AccountsBalanceViewer\AccountsBalanceViewer.Domain\obj\Debug\net6.0\AccountsBalanceViewer.Domain.AssemblyInfo.cs
+D:\Repos\AccountsBalanceViewer\API\99x.AccountsBalanceViewer\AccountsBalanceViewer.Domain\obj\Debug\net6.0\AccountsBalanceViewer.Domain.csproj.CoreCompileInputs.cache
+D:\Repos\AccountsBalanceViewer\API\99x.AccountsBalanceViewer\AccountsBalanceViewer.Domain\obj\Debug\net6.0\AccountsBalanceViewer.Domain.dll
+D:\Repos\AccountsBalanceViewer\API\99x.AccountsBalanceViewer\AccountsBalanceViewer.Domain\obj\Debug\net6.0\refint\AccountsBalanceViewer.Domain.dll
+D:\Repos\AccountsBalanceViewer\API\99x.AccountsBalanceViewer\AccountsBalanceViewer.Domain\obj\Debug\net6.0\AccountsBalanceViewer.Domain.pdb
+D:\Repos\AccountsBalanceViewer\API\99x.AccountsBalanceViewer\AccountsBalanceViewer.Domain\obj\Debug\net6.0\ref\AccountsBalanceViewer.Domain.dll
