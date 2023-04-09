@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = AccountsBalanceViewer.Application
-build_property.ProjectDir = D:\Repos\AccountsBalanceViewer\API\99x.AccountsBalanceViewer\AccountsBalanceViewer.Application\
+build_property.ProjectDir = D:\GitHub\AccountsBalanceViewer\API\99x.AccountsBalanceViewer\AccountsBalanceViewer.Application\

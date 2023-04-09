@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Repos\\AccountsBalanceViewer\\API\\99x.AccountsBalanceViewer\\AccountsBalanceViewer.Application.UnitTests\\AccountsBalanceViewer.Application.UnitTests.csproj": {}
+    "D:\\GitHub\\AccountsBalanceViewer\\API\\99x.AccountsBalanceViewer\\AccountsBalanceViewer.Application.UnitTests\\AccountsBalanceViewer.Application.UnitTests.csproj": {}
   },
   "projects": {
-    "D:\\Repos\\AccountsBalanceViewer\\API\\99x.AccountsBalanceViewer\\AccountsBalanceViewer.Application.UnitTests\\AccountsBalanceViewer.Application.UnitTests.csproj": {
+    "D:\\GitHub\\AccountsBalanceViewer\\API\\99x.AccountsBalanceViewer\\AccountsBalanceViewer.Application.UnitTests\\AccountsBalanceViewer.Application.UnitTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Repos\\AccountsBalanceViewer\\API\\99x.AccountsBalanceViewer\\AccountsBalanceViewer.Application.UnitTests\\AccountsBalanceViewer.Application.UnitTests.csproj",
+        "projectUniqueName": "D:\\GitHub\\AccountsBalanceViewer\\API\\99x.AccountsBalanceViewer\\AccountsBalanceViewer.Application.UnitTests\\AccountsBalanceViewer.Application.UnitTests.csproj",
         "projectName": "AccountsBalanceViewer.Application.UnitTests",
-        "projectPath": "D:\\Repos\\AccountsBalanceViewer\\API\\99x.AccountsBalanceViewer\\AccountsBalanceViewer.Application.UnitTests\\AccountsBalanceViewer.Application.UnitTests.csproj",
+        "projectPath": "D:\\GitHub\\AccountsBalanceViewer\\API\\99x.AccountsBalanceViewer\\AccountsBalanceViewer.Application.UnitTests\\AccountsBalanceViewer.Application.UnitTests.csproj",
         "packagesPath": "C:\\Users\\Janitha\\.nuget\\packages\\",
-        "outputPath": "D:\\Repos\\AccountsBalanceViewer\\API\\99x.AccountsBalanceViewer\\AccountsBalanceViewer.Application.UnitTests\\obj\\",
+        "outputPath": "D:\\GitHub\\AccountsBalanceViewer\\API\\99x.AccountsBalanceViewer\\AccountsBalanceViewer.Application.UnitTests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -31,8 +31,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Repos\\AccountsBalanceViewer\\API\\99x.AccountsBalanceViewer\\AccountsBalanceViewer.Application\\AccountsBalanceViewer.Application.csproj": {
-                "projectPath": "D:\\Repos\\AccountsBalanceViewer\\API\\99x.AccountsBalanceViewer\\AccountsBalanceViewer.Application\\AccountsBalanceViewer.Application.csproj"
+              "D:\\GitHub\\AccountsBalanceViewer\\API\\99x.AccountsBalanceViewer\\AccountsBalanceViewer.Application\\AccountsBalanceViewer.Application.csproj": {
+                "projectPath": "D:\\GitHub\\AccountsBalanceViewer\\API\\99x.AccountsBalanceViewer\\AccountsBalanceViewer.Application\\AccountsBalanceViewer.Application.csproj"
               }
             }
           }
@@ -100,14 +100,14 @@
         }
       }
     },
-    "D:\\Repos\\AccountsBalanceViewer\\API\\99x.AccountsBalanceViewer\\AccountsBalanceViewer.Application\\AccountsBalanceViewer.Application.csproj": {
+    "D:\\GitHub\\AccountsBalanceViewer\\API\\99x.AccountsBalanceViewer\\AccountsBalanceViewer.Application\\AccountsBalanceViewer.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Repos\\AccountsBalanceViewer\\API\\99x.AccountsBalanceViewer\\AccountsBalanceViewer.Application\\AccountsBalanceViewer.Application.csproj",
+        "projectUniqueName": "D:\\GitHub\\AccountsBalanceViewer\\API\\99x.AccountsBalanceViewer\\AccountsBalanceViewer.Application\\AccountsBalanceViewer.Application.csproj",
         "projectName": "AccountsBalanceViewer.Application",
-        "projectPath": "D:\\Repos\\AccountsBalanceViewer\\API\\99x.AccountsBalanceViewer\\AccountsBalanceViewer.Application\\AccountsBalanceViewer.Application.csproj",
+        "projectPath": "D:\\GitHub\\AccountsBalanceViewer\\API\\99x.AccountsBalanceViewer\\AccountsBalanceViewer.Application\\AccountsBalanceViewer.Application.csproj",
         "packagesPath": "C:\\Users\\Janitha\\.nuget\\packages\\",
-        "outputPath": "D:\\Repos\\AccountsBalanceViewer\\API\\99x.AccountsBalanceViewer\\AccountsBalanceViewer.Application\\obj\\",
+        "outputPath": "D:\\GitHub\\AccountsBalanceViewer\\API\\99x.AccountsBalanceViewer\\AccountsBalanceViewer.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -127,8 +127,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Repos\\AccountsBalanceViewer\\API\\99x.AccountsBalanceViewer\\AccountsBalanceViewer.Domain\\AccountsBalanceViewer.Domain.csproj": {
-                "projectPath": "D:\\Repos\\AccountsBalanceViewer\\API\\99x.AccountsBalanceViewer\\AccountsBalanceViewer.Domain\\AccountsBalanceViewer.Domain.csproj"
+              "D:\\GitHub\\AccountsBalanceViewer\\API\\99x.AccountsBalanceViewer\\AccountsBalanceViewer.Domain\\AccountsBalanceViewer.Domain.csproj": {
+                "projectPath": "D:\\GitHub\\AccountsBalanceViewer\\API\\99x.AccountsBalanceViewer\\AccountsBalanceViewer.Domain\\AccountsBalanceViewer.Domain.csproj"
               }
             }
           }
@@ -184,14 +184,14 @@
         }
       }
     },
-    "D:\\Repos\\AccountsBalanceViewer\\API\\99x.AccountsBalanceViewer\\AccountsBalanceViewer.Domain\\AccountsBalanceViewer.Domain.csproj": {
+    "D:\\GitHub\\AccountsBalanceViewer\\API\\99x.AccountsBalanceViewer\\AccountsBalanceViewer.Domain\\AccountsBalanceViewer.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Repos\\AccountsBalanceViewer\\API\\99x.AccountsBalanceViewer\\AccountsBalanceViewer.Domain\\AccountsBalanceViewer.Domain.csproj",
+        "projectUniqueName": "D:\\GitHub\\AccountsBalanceViewer\\API\\99x.AccountsBalanceViewer\\AccountsBalanceViewer.Domain\\AccountsBalanceViewer.Domain.csproj",
         "projectName": "AccountsBalanceViewer.Domain",
-        "projectPath": "D:\\Repos\\AccountsBalanceViewer\\API\\99x.AccountsBalanceViewer\\AccountsBalanceViewer.Domain\\AccountsBalanceViewer.Domain.csproj",
+        "projectPath": "D:\\GitHub\\AccountsBalanceViewer\\API\\99x.AccountsBalanceViewer\\AccountsBalanceViewer.Domain\\AccountsBalanceViewer.Domain.csproj",
         "packagesPath": "C:\\Users\\Janitha\\.nuget\\packages\\",
-        "outputPath": "D:\\Repos\\AccountsBalanceViewer\\API\\99x.AccountsBalanceViewer\\AccountsBalanceViewer.Domain\\obj\\",
+        "outputPath": "D:\\GitHub\\AccountsBalanceViewer\\API\\99x.AccountsBalanceViewer\\AccountsBalanceViewer.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

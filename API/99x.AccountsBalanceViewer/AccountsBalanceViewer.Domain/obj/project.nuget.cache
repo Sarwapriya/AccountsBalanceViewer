@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3p9m7ve/Up+MDOjRfBa75X5tpwcDKaOp0Q7UuWGEwE4+ztnZUaoyJ9OacP6aKx9d3lGY/dgixsSHOkUViWTAoA==",
+  "dgSpecHash": "SXaxvapSQ11yLKKrr8RCAe5HS5Omlo9lw+eUVJw0LnfmVe/R58sLodyUnBDkcYzotnJBoYlCFGmMDbE02w5MRA==",
   "success": true,
-  "projectFilePath": "D:\\Repos\\AccountsBalanceViewer\\API\\99x.AccountsBalanceViewer\\AccountsBalanceViewer.Domain\\AccountsBalanceViewer.Domain.csproj",
+  "projectFilePath": "D:\\GitHub\\AccountsBalanceViewer\\API\\99x.AccountsBalanceViewer\\AccountsBalanceViewer.Domain\\AccountsBalanceViewer.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

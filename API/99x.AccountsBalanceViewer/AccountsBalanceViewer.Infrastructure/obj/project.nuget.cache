@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9ZVdhl0vfdlqXcCmADiTst6Nz1+92nrTCb14KDDnelpFQyARmjOy6xa9yYcmVXkS+jfMbxYr2EDCIO5lmMKssg==",
+  "dgSpecHash": "LtMZzfpXU2IcokmSdcniZEH1cTWqUsUuy260OrWaS/1lYV1cVWr3NsFSKf7hfCIDGUcD67Q+IsHnxn09bFjkxg==",
   "success": true,
-  "projectFilePath": "D:\\Repos\\AccountsBalanceViewer\\API\\99x.AccountsBalanceViewer\\AccountsBalanceViewer.Infrastructure\\AccountsBalanceViewer.Infrastructure.csproj",
+  "projectFilePath": "D:\\GitHub\\AccountsBalanceViewer\\API\\99x.AccountsBalanceViewer\\AccountsBalanceViewer.Infrastructure\\AccountsBalanceViewer.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Janitha\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Janitha\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
