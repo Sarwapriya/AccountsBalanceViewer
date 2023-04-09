@@ -22,6 +22,11 @@ namespace AccountsBalanceViewer.Persistance.Repositories
         }
         #endregion
         #region Public Methods
+        /// <summary>Gets the user.</summary>
+        /// <param name="user">The user.</param>
+        /// <returns>
+        ///   <br />
+        /// </returns>
         public async Task<GetUserQueryVm> GetUser(GetUserQuery user)
         {
             var result = _context.Users

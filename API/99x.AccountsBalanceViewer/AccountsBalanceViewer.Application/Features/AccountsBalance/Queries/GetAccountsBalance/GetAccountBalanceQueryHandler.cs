@@ -15,6 +15,12 @@ namespace AccountsBalanceViewer.Application.Features.AccountsBalance.Queries.Get
         }
         #endregion
         #region Handler
+        /// <summary>Handles the specified request.</summary>
+        /// <param name="request">The request.</param>
+        /// <param name="token">The token.</param>
+        /// <returns>
+        ///   <br />
+        /// </returns>
         public async Task<IList<GetAccountBalanceQueryVm>> Handle(GetAccountBalanceQuery request, CancellationToken token)
         {
             return await _balanceRepository.GetBalanceAsync(request);

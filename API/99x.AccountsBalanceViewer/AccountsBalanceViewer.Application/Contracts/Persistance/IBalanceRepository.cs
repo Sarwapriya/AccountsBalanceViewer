@@ -7,6 +7,6 @@ namespace AccountsBalanceViewer.Application.Contracts.Persistance
     public interface IBalanceRepository :IRepository<Balance>
     {
         Task<IList<GetAccountBalanceQueryVm>> GetBalanceAsync(GetAccountBalanceQuery request);
-        Task<IList<AddAccountBalanceCommandVm>> AddBalanceAsync(IList<AddAccountBalanceCommand> request);
+        Task<IList<AddAccountBalanceCommandVm>> AddBalanceAsync(List<AddAccountBalanceCommand> request);
     }
 }

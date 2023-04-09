@@ -16,6 +16,7 @@ namespace AccountsBalanceViewer.Persistance
             //register mediatr
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped<IBalanceRepository, BalanceRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
 
             return services;
         }

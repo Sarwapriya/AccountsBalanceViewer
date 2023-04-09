@@ -24,6 +24,12 @@ namespace AccountsBalanceViewer.Application.Features.User.Queries.GetUser
 
         #region Handler
 
+        /// <summary>Handles the specified request.</summary>
+        /// <param name="request">The request.</param>
+        /// <param name="token">The token.</param>
+        /// <returns>
+        ///   <br />
+        /// </returns>
         public async Task<GetUserQueryVm> Handle(GetUserQuery request, CancellationToken token)
         {
             return await _userRepository.GetUser(request);

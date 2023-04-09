@@ -23,6 +23,11 @@ namespace AccountsBalanceViewer.Persistance.Repositories
         }
         #endregion
         #region PublicMethods
+        /// <summary>Gets the balance asynchronous.</summary>
+        /// <param name="balanceRequest">The balance request.</param>
+        /// <returns>
+        ///   <br />
+        /// </returns>
         public async Task<IList<GetAccountBalanceQueryVm>> GetBalanceAsync(GetAccountBalanceQuery balanceRequest)
         {
 
@@ -39,7 +44,12 @@ namespace AccountsBalanceViewer.Persistance.Repositories
             }).OrderBy(b => b.AccountType).ToListAsync();
         }
 
-        public async Task<IList<AddAccountBalanceCommandVm>> AddBalanceAsync(IList<AddAccountBalanceCommand> request)
+        /// <summary>Adds the balance asynchronous.</summary>
+        /// <param name="request">The request.</param>
+        /// <returns>
+        ///   <br />
+        /// </returns>
+        public async Task<IList<AddAccountBalanceCommandVm>> AddBalanceAsync(List<AddAccountBalanceCommand> request)
         {
             DateTime current = DateTime.Now;
             foreach (var item in request)
