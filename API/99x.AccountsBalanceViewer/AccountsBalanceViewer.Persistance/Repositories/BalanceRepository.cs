@@ -49,32 +49,43 @@ namespace AccountsBalanceViewer.Persistance.Repositories
         /// <returns>
         ///   <br />
         /// </returns>
-        public async Task<IList<AddAccountBalanceCommandVm>> AddBalanceAsync(List<AddAccountBalanceCommand> request)
+        public async Task<AddAccountBalanceCommandVm> AddBalanceAsync(AddAccountBalanceCommand request)
         {
+            string AccountType = RemoveSpecialCharacters(request.AccountType.Trim().ToLower());
             DateTime current = DateTime.Now;
-            foreach (var item in request)
+            _context.Balances.Add(new Balance()
             {
-                _context.Balances.Add(new Balance()
-                {
-                    AccountTypeId = await _context.AccountTypes.Where(a => a.Name.Trim().ToLower() == item.AccountType.Trim().ToLower()).Select(a=> a.Id).FirstOrDefaultAsync(),
-                    Month = current.Month.ToString("MMMMMMMMMMMMM"),
-                    Year = current.Year.ToString(),
-                    Amount = item.Amount,
-                });
-                _context.SaveChanges();
-            }
-            var result = _context.Balances
+                AccountTypeId = await _context.AccountTypes.Where(a => a.Name.Trim().ToLower() == AccountType).Select(a => a.Id).FirstOrDefaultAsync(),
+                Month = current.Month.ToString("MMMMMMMMMMMMM"),
+                Year = current.Year.ToString(),
+                Amount = request.Amount,
+            });
+            AddAccountBalanceCommandVm returnResult = new AddAccountBalanceCommandVm();
+            _context.SaveChanges();
+            var balanceResult = _context.Balances
                 .Include(b => b.AccountType)
-                .Where(b => b.Year == current.Year.ToString() && b.Month == current.Month.ToString("MMMMMMMMMMMMM"))
-                .AsQueryable();
+                .Where(b => b.Year == current.Year.ToString() && b.Month == current.Month.ToString("MMMMMMMMMMMMM") && b.AccountType.Name == AccountType)
+                .AsQueryable().FirstOrDefaultAsync();
+            returnResult.Id = balanceResult.Id;
+            returnResult.AccountType = balanceResult.Result.AccountType.Name;
+            returnResult.Year = balanceResult.Result.Year;
+            returnResult.Month = balanceResult.Result.Month;
+            return returnResult;
+        }
+        #endregion
 
-            return await result.Select(b => new AddAccountBalanceCommandVm
+        #region PrivateMethods
+        public string RemoveSpecialCharacters(string str)
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (char c in str)
             {
-                Id = b.Id,
-                AccountType = b.AccountType.Name,
-                Year = b.Year,
-                Month = b.Month
-            }).OrderBy(b => b.AccountType).ToListAsync();
+                if (c.ToString() != "'")
+                {
+                    sb.Append(c);
+                }
+            }
+            return sb.ToString();
         }
         #endregion
     }

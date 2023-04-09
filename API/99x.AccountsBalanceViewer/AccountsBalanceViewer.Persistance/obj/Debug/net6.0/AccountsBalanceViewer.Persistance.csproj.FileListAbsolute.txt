@@ -25,3 +25,14 @@ D:\GitHub\AccountsBalanceViewer\API\99x.AccountsBalanceViewer\AccountsBalanceVie
 D:\GitHub\AccountsBalanceViewer\API\99x.AccountsBalanceViewer\AccountsBalanceViewer.Persistance\obj\Debug\net6.0\AccountsBalanceViewer.Persistance.dll
 D:\GitHub\AccountsBalanceViewer\API\99x.AccountsBalanceViewer\AccountsBalanceViewer.Persistance\obj\Debug\net6.0\refint\AccountsBalanceViewer.Persistance.dll
 D:\GitHub\AccountsBalanceViewer\API\99x.AccountsBalanceViewer\AccountsBalanceViewer.Persistance\obj\Debug\net6.0\AccountsBalanceViewer.Persistance.pdb
+D:\GitHub\AccountsBalanceViewer\API\99x.AccountsBalanceViewer\AccountsBalanceViewer.Persistance\bin\Debug\net6.0\AccountsBalanceViewer.Persistance.deps.json
+D:\GitHub\AccountsBalanceViewer\API\99x.AccountsBalanceViewer\AccountsBalanceViewer.Persistance\bin\Debug\net6.0\AccountsBalanceViewer.Persistance.runtimeconfig.json
+D:\GitHub\AccountsBalanceViewer\API\99x.AccountsBalanceViewer\AccountsBalanceViewer.Persistance\bin\Debug\net6.0\AccountsBalanceViewer.Persistance.dll
+D:\GitHub\AccountsBalanceViewer\API\99x.AccountsBalanceViewer\AccountsBalanceViewer.Persistance\bin\Debug\net6.0\AccountsBalanceViewer.Persistance.pdb
+D:\GitHub\AccountsBalanceViewer\API\99x.AccountsBalanceViewer\AccountsBalanceViewer.Persistance\bin\Debug\net6.0\AccountsBalanceViewer.Application.dll
+D:\GitHub\AccountsBalanceViewer\API\99x.AccountsBalanceViewer\AccountsBalanceViewer.Persistance\bin\Debug\net6.0\AccountsBalanceViewer.Domain.dll
+D:\GitHub\AccountsBalanceViewer\API\99x.AccountsBalanceViewer\AccountsBalanceViewer.Persistance\bin\Debug\net6.0\AccountsBalanceViewer.Application.pdb
+D:\GitHub\AccountsBalanceViewer\API\99x.AccountsBalanceViewer\AccountsBalanceViewer.Persistance\bin\Debug\net6.0\AccountsBalanceViewer.Domain.pdb
+D:\GitHub\AccountsBalanceViewer\API\99x.AccountsBalanceViewer\AccountsBalanceViewer.Persistance\obj\Debug\net6.0\AccountsBalanceViewer.Persistance.csproj.CopyComplete
+D:\GitHub\AccountsBalanceViewer\API\99x.AccountsBalanceViewer\AccountsBalanceViewer.Persistance\obj\Debug\net6.0\AccountsBalanceViewer.Persistance.genruntimeconfig.cache
+D:\GitHub\AccountsBalanceViewer\API\99x.AccountsBalanceViewer\AccountsBalanceViewer.Persistance\obj\Debug\net6.0\ref\AccountsBalanceViewer.Persistance.dll

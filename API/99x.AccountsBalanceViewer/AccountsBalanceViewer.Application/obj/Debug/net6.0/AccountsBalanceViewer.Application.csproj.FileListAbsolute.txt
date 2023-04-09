@@ -21,3 +21,10 @@ D:\GitHub\AccountsBalanceViewer\API\99x.AccountsBalanceViewer\AccountsBalanceVie
 D:\GitHub\AccountsBalanceViewer\API\99x.AccountsBalanceViewer\AccountsBalanceViewer.Application\obj\Debug\net6.0\AccountsBalanceViewer.Application.dll
 D:\GitHub\AccountsBalanceViewer\API\99x.AccountsBalanceViewer\AccountsBalanceViewer.Application\obj\Debug\net6.0\refint\AccountsBalanceViewer.Application.dll
 D:\GitHub\AccountsBalanceViewer\API\99x.AccountsBalanceViewer\AccountsBalanceViewer.Application\obj\Debug\net6.0\AccountsBalanceViewer.Application.pdb
+D:\GitHub\AccountsBalanceViewer\API\99x.AccountsBalanceViewer\AccountsBalanceViewer.Application\bin\Debug\net6.0\AccountsBalanceViewer.Application.deps.json
+D:\GitHub\AccountsBalanceViewer\API\99x.AccountsBalanceViewer\AccountsBalanceViewer.Application\bin\Debug\net6.0\AccountsBalanceViewer.Application.dll
+D:\GitHub\AccountsBalanceViewer\API\99x.AccountsBalanceViewer\AccountsBalanceViewer.Application\bin\Debug\net6.0\AccountsBalanceViewer.Application.pdb
+D:\GitHub\AccountsBalanceViewer\API\99x.AccountsBalanceViewer\AccountsBalanceViewer.Application\bin\Debug\net6.0\AccountsBalanceViewer.Domain.dll
+D:\GitHub\AccountsBalanceViewer\API\99x.AccountsBalanceViewer\AccountsBalanceViewer.Application\bin\Debug\net6.0\AccountsBalanceViewer.Domain.pdb
+D:\GitHub\AccountsBalanceViewer\API\99x.AccountsBalanceViewer\AccountsBalanceViewer.Application\obj\Debug\net6.0\AccountsBalanceViewer.Application.csproj.CopyComplete
+D:\GitHub\AccountsBalanceViewer\API\99x.AccountsBalanceViewer\AccountsBalanceViewer.Application\obj\Debug\net6.0\ref\AccountsBalanceViewer.Application.dll

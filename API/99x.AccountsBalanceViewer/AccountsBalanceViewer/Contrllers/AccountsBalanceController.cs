@@ -59,6 +59,7 @@ namespace AccountsBalanceViewer.API.Contrllers
             {
                 await fileAccountBalances.CopyToAsync(stream);
             }
+            List<AddAccountBalanceCommandVm> returnResultList = new List<AddAccountBalanceCommandVm>();
             List<AddAccountBalanceCommand> balanceCommandList = new List<AddAccountBalanceCommand>();
             // Read the file using EPPlus or CsvHelper
             if (fileExtension == ".xlsx")
@@ -88,8 +89,8 @@ namespace AccountsBalanceViewer.API.Contrllers
                             Amount = Convert.ToDecimal(data[1][i].ToString())
                         });
                     }
-                    var result = await _mediator.Send(balanceCommandList);
-                    return Ok(result);
+                    //var result = await _mediator.Send(balanceCommandList);
+                    //return Ok(result);
                 }
             }
             else if (fileExtension == ".txt")
@@ -120,12 +121,20 @@ namespace AccountsBalanceViewer.API.Contrllers
                         }
                     }
                     file.Close();
-                    var result = await _mediator.Send(balanceCommandList);
-                    return Ok(result);
+                    //var result = await _mediator.Send(balanceCommandList);
+                    //return Ok(result);
                 }
 
             }
-
+            if (balanceCommandList != null)
+            {
+                foreach (var item in balanceCommandList)
+                {
+                    var result = await _mediator.Send(item);
+                    returnResultList.Add(result);
+                }
+                return Ok(returnResultList);
+            }
             return BadRequest("Invalid file type.");
         }
         #endregion

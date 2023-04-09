@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace AccountsBalanceViewer.Application.Features.AccountsBalance.Commands.AddAccountsBalance
 {
-    public class AddAccountBalanceCommandHandler : IRequestHandler<List<AddAccountBalanceCommand>, IList<AddAccountBalanceCommandVm>>
+    public class AddAccountBalanceCommandHandler : IRequestHandler<AddAccountBalanceCommand, AddAccountBalanceCommandVm>
     {
         #region Fileds
         private readonly IBalanceRepository _balanceRepository;
@@ -22,7 +22,7 @@ namespace AccountsBalanceViewer.Application.Features.AccountsBalance.Commands.Ad
         /// <returns>
         ///   <br />
         /// </returns>
-        public async Task<IList<AddAccountBalanceCommandVm>> Handle(List<AddAccountBalanceCommand> request, CancellationToken token)
+        public async Task<AddAccountBalanceCommandVm> Handle(AddAccountBalanceCommand request, CancellationToken token)
         {
             return await _balanceRepository.AddBalanceAsync(request);
         }
