@@ -1,4 +1,5 @@
 ﻿using AccountsBalanceViewer.Application.Contracts.Persistance;
+using AccountsBalanceViewer.Application.Features.AccountsBalance.Commands.AddAccountsBalance;
 using AccountsBalanceViewer.Application.Features.AccountsBalance.Queries.GetAccountsBalance;
 using AccountsBalanceViewer.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
@@ -10,15 +11,15 @@ using System.Threading.Tasks;
 
 namespace AccountsBalanceViewer.Persistance.Repositories
 {
-    public class BalanceRepository: Repository<Balance>, IBalanceRepository
+    public class BalanceRepository : Repository<Balance>, IBalanceRepository
     {
         #region Fields
         private readonly AccountsBalanceViewerContext _context;
         #endregion
         #region Constructor
-        public BalanceRepository(AccountsBalanceViewerContext context): base(context)
+        public BalanceRepository(AccountsBalanceViewerContext context) : base(context)
         {
-            _context= context;
+            _context = context;
         }
         #endregion
         #region PublicMethods
@@ -29,7 +30,35 @@ namespace AccountsBalanceViewer.Persistance.Repositories
                 .Include(b => b.AccountType)
                 .Where(b => (balanceRequest.Year == null && balanceRequest.Month == null) || b.Year == balanceRequest.Year && b.Month == balanceRequest.Month)
                 .AsQueryable();
-            return await result.Select(b=> new GetAccountBalanceQueryVm
+            return await result.Select(b => new GetAccountBalanceQueryVm
+            {
+                Id = b.Id,
+                AccountType = b.AccountType.Name,
+                Year = b.Year,
+                Month = b.Month
+            }).OrderBy(b => b.AccountType).ToListAsync();
+        }
+
+        public async Task<IList<AddAccountBalanceCommandVm>> AddBalanceAsync(IList<AddAccountBalanceCommand> request)
+        {
+            DateTime current = DateTime.Now;
+            foreach (var item in request)
+            {
+                _context.Balances.Add(new Balance()
+                {
+                    AccountTypeId = await _context.AccountTypes.Where(a => a.Name.Trim().ToLower() == item.AccountType.Trim().ToLower()).Select(a=> a.Id).FirstOrDefaultAsync(),
+                    Month = current.Month.ToString("MMMMMMMMMMMMM"),
+                    Year = current.Year.ToString(),
+                    Amount = item.Amount,
+                });
+                _context.SaveChanges();
+            }
+            var result = _context.Balances
+                .Include(b => b.AccountType)
+                .Where(b => b.Year == current.Year.ToString() && b.Month == current.Month.ToString("MMMMMMMMMMMMM"))
+                .AsQueryable();
+
+            return await result.Select(b => new AddAccountBalanceCommandVm
             {
                 Id = b.Id,
                 AccountType = b.AccountType.Name,

@@ -36,22 +36,22 @@ builder.Services.AddPersistanceServices();
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen(options =>
 {
-    options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
-    {
-        Type = SecuritySchemeType.OAuth2,
-        Flows = new OpenApiOAuthFlows()
-        {
-            Implicit = new OpenApiOAuthFlow()
-            {
-                AuthorizationUrl = new Uri($"{builder.Configuration["SwaggerOauthConfiguration:AuthEndpoint"]}"),
-                TokenUrl = new Uri($"{builder.Configuration["SwaggerOauthConfiguration:TokenEndpoint"]}"),
-                Scopes = new Dictionary<string, string>
-                {
-                    { $"{builder.Configuration["SwaggerOauthConfiguration:Scopes"]}", "access as user" }
-                }
-            }
-        }
-    });
+    //options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
+    //{
+    //    Type = SecuritySchemeType.OAuth2,
+    //    Flows = new OpenApiOAuthFlows()
+    //    {
+    //        Implicit = new OpenApiOAuthFlow()
+    //        {
+    //            AuthorizationUrl = new Uri($"{builder.Configuration["SwaggerOauthConfiguration:AuthEndpoint"]}"),
+    //            TokenUrl = new Uri($"{builder.Configuration["SwaggerOauthConfiguration:TokenEndpoint"]}"),
+    //            Scopes = new Dictionary<string, string>
+    //            {
+    //                { $"{builder.Configuration["SwaggerOauthConfiguration:Scopes"]}", "access as user" }
+    //            }
+    //        }
+    //    }
+    //});
     options.AddSecurityRequirement(new OpenApiSecurityRequirement()
     {
         {
@@ -80,9 +80,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI(s =>
         {
-            s.OAuthClientId(clientId);
-            s.OAuthClientSecret(clientSecret);
-            s.OAuthUseBasicAuthenticationWithAccessCodeGrant();
+            //s.OAuthClientId(clientId);
+            //s.OAuthClientSecret(clientSecret);
+            //s.OAuthUseBasicAuthenticationWithAccessCodeGrant();
         });
 }
 

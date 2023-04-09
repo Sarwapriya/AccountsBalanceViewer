@@ -5,13 +5,15 @@ using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.VisualBasic;
 using OfficeOpenXml;
 using System.Formats.Asn1;
 using System.Globalization;
+using System.Linq;
 
 namespace AccountsBalanceViewer.API.Contrllers
 {
-    [Authorize]
+    //[Authorize]
     [Route("api/accountBalance")]
     [ApiController]
     public class AccountsBalanceController : ControllerBase
@@ -40,7 +42,7 @@ namespace AccountsBalanceViewer.API.Contrllers
         // POST: AccountsBalanceController/Create
         [HttpPost("add-account-balance")]
         [ProducesResponseType(200)]
-        public async Task<ActionResult> AddAccountBalance(IFormFile fileAccountBalances)
+        public async Task<ActionResult<IList<AddAccountBalanceCommandVm>>> AddAccountBalance(IFormFile fileAccountBalances)
         {
 
             if (fileAccountBalances == null || fileAccountBalances.Length == 0)
@@ -48,7 +50,7 @@ namespace AccountsBalanceViewer.API.Contrllers
 
             var fileExtension = Path.GetExtension(fileAccountBalances.FileName);
 
-            if (fileExtension != ".xlsx" && fileExtension != ".csv")
+            if (fileExtension != ".xlsx" && fileExtension != ".txt")
                 return BadRequest("Invalid file type.");
 
             // Save the file to the server
@@ -57,10 +59,11 @@ namespace AccountsBalanceViewer.API.Contrllers
             {
                 await fileAccountBalances.CopyToAsync(stream);
             }
-
+            List<AddAccountBalanceCommand> balanceCommandList = new List<AddAccountBalanceCommand>();
             // Read the file using EPPlus or CsvHelper
             if (fileExtension == ".xlsx")
             {
+                ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
                 using (var package = new ExcelPackage(new FileInfo(filePath)))
                 {
                     var worksheet = package.Workbook.Worksheets[0];
@@ -77,29 +80,53 @@ namespace AccountsBalanceViewer.API.Contrllers
                         }
                         data.Add(rowData);
                     }
-
-                    return Ok(data);
+                    for (int i = 0; i < data[1].Length; i++)
+                    {
+                        balanceCommandList.Add(new AddAccountBalanceCommand()
+                        {
+                            AccountType = data[0][i].ToString(),
+                            Amount = Convert.ToDecimal(data[1][i].ToString())
+                        });
+                    }
+                    var result = await _mediator.Send(balanceCommandList);
+                    return Ok(result);
                 }
             }
-            else if (fileExtension == ".csv")
+            else if (fileExtension == ".txt")
             {
-                using (var reader = new StreamReader(filePath))
-                using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+                var sepList = new List<string>();
+
+                // Read the file and display it line by line.
+                using (var file = new StreamReader(filePath))
                 {
-                    var data = csv.GetRecords<object[]>().ToList();
-                    return Ok(data);
+                    string line;
+                    while ((line = file.ReadLine()) != null)
+                    {
+                        var delimiters = new char[] { '\t' };
+                        string[] segments = line.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
+
+                        for (int i = 0; i < segments.Length; i++)
+                        {
+                            AddAccountBalanceCommand balanceItem = new AddAccountBalanceCommand();
+                            if (int.TryParse(segments[i], out _))
+                            {
+                                balanceCommandList[i].Amount = Convert.ToDecimal(segments[i].ToString());
+                            }
+                            else
+                            {
+                                balanceItem.AccountType = segments[i].ToString();
+                                balanceCommandList.Add(balanceItem);
+                            }
+                        }
+                    }
+                    file.Close();
+                    var result = await _mediator.Send(balanceCommandList);
+                    return Ok(result);
                 }
+
             }
 
             return BadRequest("Invalid file type.");
-
-
-
-
-
-
-            //var result = await _mediator.Send(accountBalances);
-            //return Ok(result);
         }
         #endregion
     }
