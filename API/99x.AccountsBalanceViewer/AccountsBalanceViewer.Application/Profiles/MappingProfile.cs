@@ -11,9 +11,15 @@ namespace AccountsBalanceViewer.Application.Profiles
 {
     public class MappingProfile : Profile
     {
-        public MappingProfile() 
+        public MappingProfile()
         {
-            CreateMap<Balance, AddAccountBalanceCommandVm>();
+            CreateMap<Balance, AddAccountBalanceCommandVm>()
+                .ForMember(dest => dest.Id, act => act.MapFrom(src => src.Id))
+                .ForMember(dest => dest.AccountType, act => act.MapFrom(src => src.AccountType.Name))
+                .ForMember(dest => dest.Year, act => act.MapFrom(src => src.Year))
+                .ForMember(dest => dest.Month, act => act.MapFrom(src => src.Month))
+                .ForMember(dest => dest.Amount, act => act.MapFrom(src => src.Amount));
+
         }
     }
 }
