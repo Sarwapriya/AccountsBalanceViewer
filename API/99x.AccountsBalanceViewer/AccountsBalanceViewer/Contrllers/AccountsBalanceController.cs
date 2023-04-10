@@ -31,7 +31,7 @@ namespace AccountsBalanceViewer.API.Contrllers
         // GET: AccountsBalanceController
 
         #region API
-        [HttpGet("{year}/{month}/get-account-balance")]
+        [HttpGet("get-account-balance")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(GetAccountBalanceQueryVm))]
         public async Task<ActionResult<IList<GetAccountBalanceQueryVm>>> GetAccountBalanceByMonth([FromQuery] GetAccountBalanceQuery accBalance)
         {

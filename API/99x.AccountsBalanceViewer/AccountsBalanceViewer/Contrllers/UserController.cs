@@ -21,7 +21,7 @@ namespace AccountsBalanceViewer.API.Contrllers
         #endregion
         #region API
         // GET: UserController
-        [HttpGet("{email}/get-user")]
+        [HttpGet("get-user")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(GetUserQueryVm))]
         public async Task<ActionResult<GetUserQueryVm>> GetUser([FromQuery] GetUserQuery userRequest)
         {
