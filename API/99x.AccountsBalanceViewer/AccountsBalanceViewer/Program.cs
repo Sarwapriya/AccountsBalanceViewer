@@ -75,16 +75,16 @@ builder.Services.AddSwaggerGen(options =>
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI(s =>
-        {
-            //s.OAuthClientId(clientId);
-            //s.OAuthClientSecret(clientSecret);
-            //s.OAuthUseBasicAuthenticationWithAccessCodeGrant();
-        });
-}
+//if (app.Environment.IsDevelopment())
+//{
+app.UseSwagger();
+app.UseSwaggerUI(s =>
+    {
+        s.OAuthClientId(clientId);
+        s.OAuthClientSecret(clientSecret);
+        s.OAuthUseBasicAuthenticationWithAccessCodeGrant();
+    });
+//}
 
 using (var scope = app.Services.CreateScope())
 {

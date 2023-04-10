@@ -13,7 +13,7 @@ using System.Linq;
 
 namespace AccountsBalanceViewer.API.Contrllers
 {
-    //[Authorize]
+    [Authorize]
     [Route("api/accountBalance")]
     [ApiController]
     public class AccountsBalanceController : ControllerBase

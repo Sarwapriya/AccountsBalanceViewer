@@ -1,10 +1,11 @@
 ﻿using AccountsBalanceViewer.Application.Features.User.Queries.GetUser;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AccountsBalanceViewer.API.Contrllers
 {
-    //[Authorize]
+    [Authorize]
     [Route("api/user")]
     [ApiController]
     public class UserController : ControllerBase
