@@ -1,42 +1,26 @@
-<div class="container">
-    <h2 class="text-center">Upload CSV File</h2>
-    <form>
-        <input id="txt_year" (change)="onChangeYear($event)" type="text" class="text-center" placeholder="Year">
-        <input id="txt_month" (change)="onChangeMonth($event)" type="text" class="text-center" placeholder="Month">
-        <div class="form-group">
-            <button type="submit" (click)="getData()">Get Data</button>
-        </div>
+<h2>View Data Component</h2>
 
-        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<form (submit)="onSubmit()">
+  <label for="month">Month:</label>
+  <input type="text" id="month" name="month" [(ngModel)]="month">
 
-            <ng-container matColumnDef="R&D">
-                <th mat-header-cell *matHeaderCellDef> R&D </th>
-                <td mat-cell *matCellDef="let element"> {{element.RD}} </td>
-            </ng-container>
+  <label for="year">Year:</label>
+  <input type="text" id="year" name="year" [(ngModel)]="year">
 
-            <ng-container matColumnDef="Canteen">
-                <th mat-header-cell *matHeaderCellDef> Canteen </th>
-                <td mat-cell *matCellDef="let element"> {{element.Canteen}} </td>
-            </ng-container>
+  <button type="submit">Submit</button>
+</form>
 
-            <ng-container matColumnDef="CEO's Car">
-                <th mat-header-cell *matHeaderCellDef> CEO's Car </th>
-                <td mat-cell *matCellDef="let element"> {{element.CEO_Car}} </td>
-            </ng-container>
-
-            <ng-container matColumnDef="Marketing">
-                <th mat-header-cell *matHeaderCellDef> Marketing </th>
-                <td mat-cell *matCellDef="let element"> {{element.Marketing}} </td>
-            </ng-container>
-
-            <ng-container matColumnDef="Parkings fines">
-                <th mat-header-cell *matHeaderCellDef> Parkings fines </th>
-                <td mat-cell *matCellDef="let element"> {{element.Parkings_fines}} </td>
-            </ng-container>
-
-            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-        </table>
-
-    </form>
-</div>
+<table>
+ <thead>
+    <tr>
+        <th>AccountType</th>
+        <th>Amount</th>
+    </tr>
+ </thead>
+ <tbody>
+    <tr *ngFor="let group of dataSource">
+        <td>{{group[0]}}</td>
+        <td>{{group[1]}}</td>
+      </tr>
+ </tbody>
+</table>

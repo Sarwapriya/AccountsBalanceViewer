@@ -11,19 +11,19 @@ var AllowSpecificOrigins = "_allowSpecificOrigins";
 var clientId = builder.Configuration["SwaggerOauthConfiguration:FrontEndAppClientId"];
 var clientSecret = builder.Configuration["SwaggerOauthConfiguration:FrontEndAppClientSecret"];
 
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy(name: AllowSpecificOrigins,
-        policy =>
-        {
+//builder.Services.AddCors(options =>
+//{
+//    options.AddPolicy(name: AllowSpecificOrigins,
+//        policy =>
+//        {
 
-            policy.AllowAnyOrigin()
-            .AllowAnyHeader()
-            .AllowAnyMethod();
-        });
-});
+//            policy.AllowAnyOrigin()
+//            .AllowAnyHeader()
+//            .AllowAnyMethod();
+//        });
+//});
 
-// Add services to the container.
+//Add services to the container.
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddMicrosoftIdentityWebApi(builder.Configuration.GetSection("AzureAd"));
 
@@ -32,26 +32,27 @@ builder.Services.AddDbContext<AccountsBalanceViewerContext>(options =>
 
 builder.Services.AddApplicationServices();
 builder.Services.AddPersistanceServices();
+builder.Services.AddCors();
 
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen(options =>
 {
-    options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
-    {
-        Type = SecuritySchemeType.OAuth2,
-        Flows = new OpenApiOAuthFlows()
-        {
-            Implicit = new OpenApiOAuthFlow()
-            {
-                AuthorizationUrl = new Uri($"{builder.Configuration["SwaggerOauthConfiguration:AuthEndpoint"]}"),
-                TokenUrl = new Uri($"{builder.Configuration["SwaggerOauthConfiguration:TokenEndpoint"]}"),
-                Scopes = new Dictionary<string, string>
-                {
-                    { $"{builder.Configuration["SwaggerOauthConfiguration:Scopes"]}", "default" }
-                }
-            }
-        }
-    });
+    //options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
+    //{
+    //    Type = SecuritySchemeType.OAuth2,
+    //    Flows = new OpenApiOAuthFlows()
+    //    {
+    //        Implicit = new OpenApiOAuthFlow()
+    //        {
+    //            AuthorizationUrl = new Uri($"{builder.Configuration["SwaggerOauthConfiguration:AuthEndpoint"]}"),
+    //            TokenUrl = new Uri($"{builder.Configuration["SwaggerOauthConfiguration:TokenEndpoint"]}"),
+    //            Scopes = new Dictionary<string, string>
+    //            {
+    //                { $"{builder.Configuration["SwaggerOauthConfiguration:Scopes"]}", "default" }
+    //            }
+    //        }
+    //    }
+    //});
     options.AddSecurityRequirement(new OpenApiSecurityRequirement()
     {
         {
@@ -98,7 +99,15 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseCors(AllowSpecificOrigins);
+//app.UseCors(AllowSpecificOrigins);
+
+app.UseCors(builder =>
+{
+    builder.AllowAnyOrigin() // Allow requests from any origin
+           .AllowAnyHeader()
+           .AllowAnyMethod();
+});
+
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();

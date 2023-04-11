@@ -15,9 +15,9 @@ export class FileServiceService {
     return this.http.post(url, uploadData);
   }
   getData(url: string, month: string, year: string): Observable<any> {
-    let queryParams = new HttpParams();
-    queryParams.append("year",year);
-    queryParams.append("month",month);
-    return this.http.get(url, {params:queryParams});
+    const option = {
+      params : new HttpParams().set('year',year).set('month',month)
+    }
+    return this.http.get(url, option);
   }
 }
