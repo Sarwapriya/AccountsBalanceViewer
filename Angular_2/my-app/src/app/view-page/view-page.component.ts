@@ -33,7 +33,6 @@ export class ViewPageComponent {
           items[item.accountType]+= item.amount;
         });
         this.dataSource = Object.entries(items)
-        //this.accountTypes = Array.from(new Set(data.map((item) => item.accountType)));
       },
       (error) => {
         console.log(error);
