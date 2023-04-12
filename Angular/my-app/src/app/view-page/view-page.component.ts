@@ -1,17 +1,6 @@
-import { Component } from '@angular/core';
+import { Component ,Inject} from '@angular/core';
 import { FileServiceService } from '../file-service.service';
-
-
-export interface PeriodicElement {
-  Canteen: number;
-  RD: number;
-  CEO_Car: number;
-  Marketing: number;
-  Parkings_fines: number;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  { RD: 1, Canteen: 1000, CEO_Car: 1.0079, Marketing: 20000, Parkings_fines: 10000 }]
+import { HttpClient, HttpParams } from '@angular/common/http';
 
 @Component({
   selector: 'app-view-page',
@@ -19,28 +8,39 @@ const ELEMENT_DATA: PeriodicElement[] = [
   templateUrl: './view-page.component.html'
 })
 export class ViewPageComponent {
-  constructor(private fileService: FileServiceService) {
+  constructor(private fileService: FileServiceService, private http: HttpClient, @Inject('API') private baseUrl: string ) {
 
   }
-  year: string = '';
-  month: string = '';
+  dataSource: any[] = [];
+  accountTypes: string[] = [];
+  month = '';
+  year = '';
   displayedColumns: string[] = ['R&D', 'Canteen', 'CEO\'s Car', 'Marketing', 'Parkings fines'];
-  dataSource = ELEMENT_DATA;
-  onChangeYear(event: any){
+
+  onChangeYear(event: any) {
     this.year = event.target.value;
   }
-  onChangeMonth(event: any){
+  onChangeMonth(event: any) {
     this.month = event.target.value;
   }
-  getData(): void {
-
-    const url = 'https://localhost:7106/api/accountBalance/get-account-balance';
-    this.fileService.getData(url, this.month, this.year).subscribe(
-      response => {
-        console.log('Get Data:', response);
+  onSubmit() {
+    const url = `${this.baseUrl}/api/accountBalance/get-account-balance?year=${this.year}&month=${this.month}`;
+    this.http.get<any[]>(url).subscribe(
+      (data) => {
+        const items = {};
+        data.forEach((item)=> {
+          items[item.accountType] = items[item.accountType] || 0;
+          items[item.accountType]+= item.amount;
+        });
+        this.dataSource = Object.entries(items)
+      },
+      (error) => {
+        console.log(error);
       }
-    )
+    );
   }
-
+  getAmount(group: any[]): number {
+    return group.reduce((a, item) => a + item.amount, 0);
+  };
 }
 

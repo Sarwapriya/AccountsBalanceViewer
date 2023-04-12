@@ -5,9 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ViewPageComponent } from './view-page/view-page.component';
 import { UploadFileComponent } from './upload-file/upload-file.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatTableModule } from '@angular/material/table'
+import { FormsModule } from '@angular/forms';
+import { NgPipesModule } from 'ngx-pipes';
+import { environment } from 'src/environments/environment.prod';
 
 @NgModule({
   declarations: [
@@ -17,12 +19,15 @@ import { MatTableModule } from '@angular/material/table'
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    BrowserAnimationsModule,
-    MatTableModule
+    NgPipesModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    {provide:'API',useValue:environment.baseUrl}
+  ],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
