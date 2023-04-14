@@ -20,7 +20,7 @@ export class UploadFileComponent {
     
     console.log("onUpload " +this.selectedFile);
     if (this.selectedFile) {
-      const url = `${this.baseUrl}api/accountBalance/add-account-balance`;
+      const url = `${this.baseUrl}/api/accountBalance/add-account-balance`;
       //this.http..post()
       this.fileService.uploadFile(url,this.selectedFile).subscribe(
         response => {
