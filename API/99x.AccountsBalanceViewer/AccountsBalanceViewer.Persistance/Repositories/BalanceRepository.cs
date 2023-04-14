@@ -38,13 +38,15 @@ namespace AccountsBalanceViewer.Persistance.Repositories
                 .Include(b => b.AccountType)
                 .Where(b => (balanceRequest.Year == null && balanceRequest.Month == null) || b.Year == balanceRequest.Year && b.Month == balanceRequest.Month)
                 .AsQueryable();
-            return await result.Select(b => new GetAccountBalanceQueryVm
+            var AccBalanceList = await result.Select(b => new GetAccountBalanceQueryVm
             {
                 Id = b.Id,
                 AccountType = b.AccountType.Name,
                 Year = b.Year,
-                Month = b.Month
+                Month = b.Month,
+                Amount= b.Amount,
             }).OrderBy(b => b.AccountType).ToListAsync();
+            return AccBalanceList;
         }
 
         /// <summary>Adds the balance asynchronous.</summary>
