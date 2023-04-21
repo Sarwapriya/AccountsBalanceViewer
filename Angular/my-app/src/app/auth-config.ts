@@ -19,7 +19,7 @@ export const msalConfig: Configuration = {
      auth: {
          clientId: 'f10dfe2d-d499-4378-a23a-14a7403b0da0',
          authority: "https://login.microsoftonline.com/3cbee9af-8d65-4e8a-b1b7-5e03b1679985",
-         knownAuthorities: [b2cPolicies.authorityDomain],
+         //knownAuthorities: [b2cPolicies.authorityDomain],
          //redirectUri: 'http://localhost:4200', 
          redirectUri: 'https://proud-sand-058d45900.3.azurestaticapps.net/view', 
      },
@@ -40,8 +40,10 @@ export const msalConfig: Configuration = {
 
 export const protectedResources = {
   todoListApi: {
-    endpoint: "http://localhost:5000/api/todolist",
-    scopes: ["api://f10dfe2d-d499-4378-a23a-14a7403b0da0/Read"]
+    //endpoint: "http://localhost:5000/api/todolist",
+    //scopes: ["api://f10dfe2d-d499-4378-a23a-14a7403b0da0/Read"]
+    endpoint: "https://graph.microsoft.com/v1.0/me",
+    scopes: ['Read']
   },
 }
 export const loginRequest = {
