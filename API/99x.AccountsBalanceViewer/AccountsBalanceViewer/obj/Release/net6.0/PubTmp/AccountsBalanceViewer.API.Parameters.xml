@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
-  <parameter name="IIS Web Application Name" description="" value="jondellaccbalance" tags="IisApp">
+  <parameter name="IIS Web Application Name" description="" value="AccountBalanceViewer" tags="IisApp">
     <parameterEntry kind="ProviderPath" scope="IisApp" match="^D:\\GitHub\\AccountsBalanceViewer\\API\\99x\.AccountsBalanceViewer\\AccountsBalanceViewer\\obj\\Release\\net6\.0\\PubTmp\\Out\\$" />
   </parameter>
 </parameters>

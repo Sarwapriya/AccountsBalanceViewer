@@ -17,8 +17,8 @@ export const b2cPolicies = {
  
 export const msalConfig: Configuration = {
      auth: {
-         clientId: '2af0aee7-087d-4ea5-a0c8-3302d04d5257',
-         authority: "https://login.microsoftonline.com/48a02b7e-d1b8-4bcb-9608-a852da6e05ca",
+         clientId: 'f10dfe2d-d499-4378-a23a-14a7403b0da0',
+         authority: "https://login.microsoftonline.com/3cbee9af-8d65-4e8a-b1b7-5e03b1679985",
          knownAuthorities: [b2cPolicies.authorityDomain],
          redirectUri: 'http://localhost:4200', 
      },
@@ -40,7 +40,7 @@ export const msalConfig: Configuration = {
 export const protectedResources = {
   todoListApi: {
     endpoint: "http://localhost:5000/api/todolist",
-    scopes: ["https://accountbalanceviewer.onmicrosoft.com/a8a5260b-8414-4bad-8704-1c83380c3f4d/read"]
+    scopes: ["api://f10dfe2d-d499-4378-a23a-14a7403b0da0/Read"]
   },
 }
 export const loginRequest = {
