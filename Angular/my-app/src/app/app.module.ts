@@ -76,7 +76,7 @@ import { MatTableModule } from '@angular/material/table';
     },
     MsalGuard,
     
-    //{provide:'API',useValue:environment.baseUrl}
+    {provide:'API',useValue:environment.baseUrl}
     /* Changes end here. */
   ],
   bootstrap: [

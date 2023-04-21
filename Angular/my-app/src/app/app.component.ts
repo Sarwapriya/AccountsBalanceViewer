@@ -3,6 +3,7 @@ import { MsalService, MsalBroadcastService, MSAL_GUARD_CONFIG, MsalGuardConfigur
 import { InteractionStatus, RedirectRequest } from '@azure/msal-browser';
 import { Subject } from 'rxjs';
 import { filter, takeUntil } from 'rxjs/operators';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-root',
@@ -40,7 +41,8 @@ export class AppComponent implements OnInit{
   logout() { 
     this.authService.logoutRedirect({
       //postLogoutRedirectUri: 'http://localhost:4200'
-      postLogoutRedirectUri: 'https://proud-sand-058d45900.3.azurestaticapps.net/view'
+      //postLogoutRedirectUri: 'https://proud-sand-058d45900.3.azurestaticapps.net/view'
+      postLogoutRedirectUri: environment.postLogoutUrl
     });
   }
 

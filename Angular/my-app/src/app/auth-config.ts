@@ -2,7 +2,7 @@ import { LogLevel, Configuration, BrowserCacheLocation } from '@azure/msal-brows
 
 const isIE = window.navigator.userAgent.indexOf("MSIE ") > -1 || window.navigator.userAgent.indexOf("Trident/") > -1;
  
-export const b2cPolicies = {
+/* export const b2cPolicies = {
      names: {
          signUpSignIn: "B2C_1_SignUp_SignIn"
      },
@@ -12,7 +12,7 @@ export const b2cPolicies = {
          }
      },
      authorityDomain: "deac6d4c-ac2a-4b5d-8e46-5f69dfb28e7b.b2clogin.com"
- };
+ }; */
  
  
 export const msalConfig: Configuration = {
