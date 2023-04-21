@@ -39,7 +39,8 @@ export class AppComponent implements OnInit{
 
   logout() { 
     this.authService.logoutRedirect({
-      postLogoutRedirectUri: 'http://localhost:4200'
+      //postLogoutRedirectUri: 'http://localhost:4200'
+      postLogoutRedirectUri: 'https://proud-sand-058d45900.3.azurestaticapps.net/view'
     });
   }
 
