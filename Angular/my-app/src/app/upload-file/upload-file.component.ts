@@ -23,10 +23,18 @@ export class UploadFileComponent {
       const url = `${this.baseUrl}api/accountBalance/add-account-balance`;
       //const url = 'https://localhost:4200/api/accountBalance/add-account-balance';
       //this.http..post()
+
+
+      const uploadData = new FormData();
+      uploadData.append('file', this.selectedFile, this.selectedFile.name);
+  
+      this.http.post(url, uploadData);
+
+/* 
       this.fileService.uploadFile(url,this.selectedFile).subscribe(
         response => {
           console.log("file Uploaded successfully ");}
-      )
+      ) */
       console.log('Uploading file:', this.selectedFile.name);
     }
   }
