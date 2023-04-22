@@ -41,7 +41,7 @@ namespace AccountsBalanceViewer.API.Contrllers
 
         // POST: AccountsBalanceController/Create
         [HttpPost("add-account-balance")]
-        [ProducesResponseType(200)]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IList<AddAccountBalanceCommandVm>))]
         public async Task<ActionResult<IList<AddAccountBalanceCommandVm>>> AddAccountBalance(IFormFile fileAccountBalances)
         {
 

@@ -5,11 +5,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class FileServiceService {
-  private url = 'add-account-balance';
+  private url = 'https://localhost:4200/api/accountBalance/add-account-balance';
   constructor(private http: HttpClient) { }
 
   uploadFile(url: string, file: File): Observable<any> {
-    const uploadData = new FormData();
+    const uploadData: FormData = new FormData();
     uploadData.append('file', file, file.name);
 
     return this.http.post(url, uploadData);
