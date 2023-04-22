@@ -3,8 +3,8 @@
   
     <div class="toolbar-spacer"></div>
   
-    <a mat-button [routerLink]="['profile']">Profile</a>
-    <a mat-button [routerLink]="['upload-file']">Upload File</a>
+    <a mat-button [routerLink]="['view']">View Report</a>
+    <a mat-button [routerLink]="['upload']">Upload File</a>
   
     <button mat-raised-button *ngIf="!loginDisplay" (click)="login()">Login</button>
     <button mat-raised-button *ngIf="loginDisplay" (click)="logout()">Logout</button>

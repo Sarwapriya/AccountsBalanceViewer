@@ -13,16 +13,6 @@ const routes: Routes = [
   { path: 'upload', component: UploadFileComponent },
   { path: '', redirectTo: '/view', pathMatch: 'full' },
   {
-    path: 'profile',
-    component: ProfileComponent,
-    canActivate: [MsalGuard]
-  },
-  {
-    path: 'webapi',
-    component: WebapiComponent,
-    canActivate: [MsalGuard]
-  },
-  {
     path: '',
     component: HomeComponent
   }
