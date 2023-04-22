@@ -21,7 +21,7 @@ export const msalConfig: Configuration = {
          authority: "https://login.microsoftonline.com/3cbee9af-8d65-4e8a-b1b7-5e03b1679985",
          //knownAuthorities: [b2cPolicies.authorityDomain],
          //redirectUri: 'http://localhost:4200', 
-         redirectUri: 'https://proud-sand-058d45900.3.azurestaticapps.net/view', 
+         redirectUri: 'https://proud-sand-058d45900.3.azurestaticapps.net', 
      },
      cache: {
          cacheLocation: BrowserCacheLocation.LocalStorage,
@@ -43,7 +43,7 @@ export const protectedResources = {
     //endpoint: "http://localhost:5000/api/todolist",
     //scopes: ["api://f10dfe2d-d499-4378-a23a-14a7403b0da0/Read"]
     endpoint: "https://graph.microsoft.com/v1.0/me",
-    scopes: ['Read']
+    scopes: ["api://f10dfe2d-d499-4378-a23a-14a7403b0da0/Read"]
   },
 }
 export const loginRequest = {
