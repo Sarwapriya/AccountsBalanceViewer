@@ -112,13 +112,12 @@ app.UseStaticFiles();
 app.UseRouting();
 
 //app.UseCors(AllowSpecificOrigins);
-app.UseCors("AllowAnyOrigin");
-//app.UseCors(builder =>
-//{
-//    builder.AllowAnyOrigin() // Allow requests from any origin
-//           .AllowAnyHeader()
-//           .AllowAnyMethod();
-//});
+app.UseCors(builder =>
+{
+    builder.AllowAnyOrigin() // Allow requests from any origin
+           .AllowAnyHeader()
+           .AllowAnyMethod();
+});
 
 app.UseAuthentication();
 app.UseAuthorization();

@@ -1,5 +1,5 @@
 import { Component ,Inject} from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 @Component({
   selector: 'app-upload-file',
@@ -16,7 +16,7 @@ export class UploadFileComponent {
       console.log("selectedFile " +this.selectedFile);
     }
   onUpload() {
-    
+    const headers = new HttpHeaders();
     console.log("onUpload " +this.selectedFile);
     if (this.selectedFile) {
       const url = `${this.baseUrl}api/accountBalance/add-account-balance`;
@@ -28,7 +28,7 @@ export class UploadFileComponent {
       uploadData.append('file', this.selectedFile, this.selectedFile.name);
   
       console.log('Uploading file:', this.selectedFile.name);
-      this.http.post<any[]>(url, uploadData).subscribe(
+      this.http.post<any[]>(url, uploadData,{headers}).subscribe(
         response => {
           console.log('File uploaded successfully', response);
           // Handle success
