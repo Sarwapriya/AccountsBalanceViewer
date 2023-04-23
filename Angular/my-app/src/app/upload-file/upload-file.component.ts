@@ -18,7 +18,6 @@ export class UploadFileComponent {
   onUpload() {
     const headers = new HttpHeaders();
     headers.append('Content-Type', 'multipart/form-data');
-    headers.append('enctype', 'multipart/form-data');
     console.log("onUpload " +this.selectedFile);
     if (this.selectedFile) {
       const url = `${this.baseUrl}api/accountBalance/add-account-balance`;
@@ -27,7 +26,7 @@ export class UploadFileComponent {
 
 
       const uploadData: FormData = new FormData();
-      uploadData.append('file', this.selectedFile, this.selectedFile.name);
+      uploadData.append('fileAccountBalances', this.selectedFile, this.selectedFile.name);
   
       console.log('Uploading file:', this.selectedFile.name);
       this.http.post<any[]>(url, uploadData,{headers}).subscribe(
