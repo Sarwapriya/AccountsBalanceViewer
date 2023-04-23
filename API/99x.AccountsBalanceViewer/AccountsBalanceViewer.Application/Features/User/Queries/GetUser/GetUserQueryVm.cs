@@ -10,6 +10,7 @@ namespace AccountsBalanceViewer.Application.Features.User.Queries.GetUser
     {
         public long Id { get; set; }
         public string Email { get; set; }
+        public string Name { get; set; }
         public bool IsAdmin { get; set; }
     }
 }

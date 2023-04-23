@@ -48,21 +48,16 @@ namespace AccountsBalanceViewer.Persistance.Repositories
             else
             {
                 User newUser = new User();
-                newUser.Email = result.Select(u => u.Email).ToString();
-                if (user.IsAdmin == true)
-                {
-                    newUser.RoleId = await _context.UserRoles.Where(r => r.Name == "Admin").Select(r=> r.Id).FirstOrDefaultAsync();
-                }
+                newUser.Email = user.Email.ToString();
+                newUser.Name = user.Name.ToString();
+                newUser.RoleId = await _context.UserRoles.Where(r => r.Name == "Member").Select(r => r.Id).FirstOrDefaultAsync();
                 _context.Users.Add(newUser);
                 _context.SaveChanges();
 
                 getUserQueryVm.Id = newUser.Id;
                 getUserQueryVm.Email = newUser.Email.ToString() ?? string.Empty;
+                getUserQueryVm.Name = newUser.Name.ToString() ?? string.Empty;
                 getUserQueryVm.IsAdmin = false;
-                if (user.IsAdmin == true)
-                {
-                    getUserQueryVm.IsAdmin = true;
-                }
             }
             return getUserQueryVm;
         }

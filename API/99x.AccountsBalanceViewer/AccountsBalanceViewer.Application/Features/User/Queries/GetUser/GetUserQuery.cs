@@ -10,6 +10,6 @@ namespace AccountsBalanceViewer.Application.Features.User.Queries.GetUser
     public class GetUserQuery : IRequest<GetUserQueryVm>
     {
         public string Email { get; set; }
-        public bool IsAdmin { get; set; }
+        public string Name { get; set; }
     }
 }

@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AccountsBalanceViewer.API.Contrllers
 {
-    [Authorize]
+    //[Authorize]
     [Route("api/user")]
     [ApiController]
     public class UserController : ControllerBase
