@@ -22,8 +22,6 @@ export class UploadFileComponent {
     console.log("onUpload " +this.selectedFile);
     if (this.selectedFile) {
       const url = `${this.baseUrl}api/accountBalance/add-account-balance`;
-      //const url = 'https://localhost:4200/api/accountBalance/add-account-balance';
-      //this.http..post()
 
 
       const uploadData: FormData = new FormData();
@@ -32,7 +30,7 @@ export class UploadFileComponent {
       console.log('Uploading file:', this.selectedFile.name);
       this.http.post<any[]>(url, uploadData,{headers}).subscribe(
         response => {
-          console.log('File uploaded successfully', response);
+          alert("File uploaded successfully" + response);
           // Handle success
         }
       );
