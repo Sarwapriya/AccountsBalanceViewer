@@ -1,5 +1,4 @@
 import { Component ,Inject} from '@angular/core';
-import { FileServiceService } from '../file-service.service';
 import { HttpClient, HttpParams } from '@angular/common/http';
 
 @Component({
@@ -8,15 +7,15 @@ import { HttpClient, HttpParams } from '@angular/common/http';
   styleUrls: ['./upload-file.component.css']
 })
 export class UploadFileComponent {
-  constructor(private fileService: FileServiceService, private http: HttpClient, @Inject('API') private baseUrl: string ){
+  constructor(private http: HttpClient, @Inject('API') private baseUrl: string ){
 
   }
   selectedFile?: File;
-  onChange(event): void {
+  onChange(event :any): void {
       this.selectedFile = event.target.files[0];
       console.log("selectedFile " +this.selectedFile);
     }
-  onUpload(): void {
+  onUpload() {
     
     console.log("onUpload " +this.selectedFile);
     if (this.selectedFile) {
@@ -25,14 +24,16 @@ export class UploadFileComponent {
       //this.http..post()
 
 
-      const uploadData = new FormData();
+      const uploadData: FormData = new FormData();
       uploadData.append('file', this.selectedFile, this.selectedFile.name);
   
-      this.fileService.uploadFile(url,this.selectedFile).subscribe(
-        response => {
-          console.log("file Uploaded successfully ");}
-      )
       console.log('Uploading file:', this.selectedFile.name);
+      this.http.post<any[]>(url, uploadData).subscribe(
+        response => {
+          console.log('File uploaded successfully', response);
+          // Handle success
+        }
+      );
     }
   }
   

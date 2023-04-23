@@ -4,6 +4,9 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Identity.Web;
 using Microsoft.OpenApi.Models;
+using Microsoft.AspNetCore.Cors;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 var AllowSpecificOrigins = "_allowSpecificOrigins";
@@ -32,7 +35,16 @@ builder.Services.AddDbContext<AccountsBalanceViewerContext>(options =>
 
 builder.Services.AddApplicationServices();
 builder.Services.AddPersistanceServices();
-builder.Services.AddCors();
+//builder.Services.AddCors();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAnyOrigin", builder =>
+    {
+        builder.AllowAnyOrigin()
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
 
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen(options =>
@@ -100,13 +112,13 @@ app.UseStaticFiles();
 app.UseRouting();
 
 //app.UseCors(AllowSpecificOrigins);
-
-app.UseCors(builder =>
-{
-    builder.AllowAnyOrigin() // Allow requests from any origin
-           .AllowAnyHeader()
-           .AllowAnyMethod();
-});
+app.UseCors("AllowAnyOrigin");
+//app.UseCors(builder =>
+//{
+//    builder.AllowAnyOrigin() // Allow requests from any origin
+//           .AllowAnyHeader()
+//           .AllowAnyMethod();
+//});
 
 app.UseAuthentication();
 app.UseAuthorization();
